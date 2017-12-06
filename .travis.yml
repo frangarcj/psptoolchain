@@ -2,7 +2,9 @@ language: cpp
 matrix:
   include:
   - os: osx
+before_script:
+  - chmod +x *.sh
+  - sudo ./toolchain-sudo.sh
 script:
 - export REV=dirty-$(git describe --always)
-- chmod +x *.sh
 - "./build.sh"
