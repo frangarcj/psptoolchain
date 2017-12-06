@@ -1,0 +1,8 @@
+language: cpp
+matrix:
+  include:
+  - os: osx
+script:
+- export REV=dirty-$(git describe --always)
+- chmod +x *.sh
+- "./build.sh"
